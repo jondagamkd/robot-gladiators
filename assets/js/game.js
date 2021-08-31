@@ -8,10 +8,10 @@ var getPlayerName = function() {
   var name = "";
 
   while (name === "" || name === null) {
-    name = prompt("What is your robot's name?");
+    name = prompt("Forsooth!  Yon game is to be viewed in yon console of thy browser.  To see yon console hit ctrl+shift+i or enter yonder dev tools through thine browser options and find yonder dev tools.\nWhat shall be thy robot's name?");
   }
 
-  console.log("Your robot's name is " + name);
+  console.log("Thy robot's name shall be " + name);
   return name;
 };
 
@@ -27,22 +27,22 @@ var playerInfo = {
   }, // comma!
   refillHealth: function() {
     if (this.money >= 7) {
-      window.alert("Refilling player's health by 20 for 7 dollars.");
+      window.alert("Thine player's health be raised by 20 for 7 dollars.");
       this.health += 20;
       this.money -= 7;
     } 
     else {
-      window.alert("You don't have enough money!");
+      window.alert("Thou doest not have enough money!");
     }
   },
   upgradeAttack: function() {
     if (this.money >= 7) {
-      window.alert("Upgrading player's attack by 6 for 7 dollars.");
+      window.alert("Upgrading thine player's attack by 6 for 7 dollars.");
       this.attack += 6;
       this.money -= 7;
     } 
     else {
-      window.alert("You don't have enough money!");
+      window.alert("Thou doest not have enough money!");
     }
   }
 };
@@ -64,11 +64,11 @@ var enemyInfo = [
 
 var fightOrSkip = function() {
   // ask player if they'd like to fight or skip using fightOrSkip function
-  var promptFight = window.prompt('Would you like to FIGHT or SKIP this battle? Enter "FIGHT" or "SKIP" to choose.');
+  var promptFight = window.prompt('Wouldest thou like to FIGHT or SKIP this battle? Enter "FIGHT" or "SKIP" for thy choice.');
 
   // Conditional Recursive Function Call
   if (promptFight === "" || promptFight === null) {
-    window.alert("You need to provide a valid answer! Please try again.");
+    window.alert("Verily, thy answer was in error.  Do try again.");
     return fightOrSkip();
   }
 
@@ -76,7 +76,7 @@ var fightOrSkip = function() {
   // if player picks "skip" confirm and then stop the loop
   if (promptFight === "skip" || promptFight === "SKIP") {
     // confirm player wants to skip
-    var confirmSkip = window.confirm("Are you sure you'd like to quit?");
+    var confirmSkip = window.confirm("Thou art sure that wouldest quit?");
 
     // if yes (true), leave fight
     if (confirmSkip) {
@@ -194,7 +194,7 @@ var startGame = function() {
       // if player is still alive and we're not at the last enemy in the array
       if (playerInfo.health > 0 && i < enemyInfo.length - 1) {
         // ask if player wants to use the store before next round
-        var storeConfirm = window.confirm("The fight is over, visit the store before the next round?");
+        var storeConfirm = window.confirm("The fight is over, wilst thou enter yon store before the next round?");
       
         // if yes, take them to the store() function
         if (storeConfirm) {
@@ -204,7 +204,7 @@ var startGame = function() {
     }
     // if player is not alive, break out of the loop and let endGame function run
     else {
-      window.alert("You have lost your robot in battle! Game Over!");
+      window.alert("Thou hast lost thine robot in battle! Game Over!");
       break;
     }
   }
@@ -215,7 +215,7 @@ var startGame = function() {
 
 // function to end the entire game
 var endGame = function() {
-  window.alert("The game has now ended. Let's see how you did!");
+  window.alert("The game has now ended. Let's see how you did!  FORESOOTH!");
 
   // check localStorage for high score, if it's not there, use 0
   var highScore = localStorage.getItem("highscore");
@@ -230,11 +230,11 @@ var endGame = function() {
     alert(playerInfo.name + " now has the high score of " + playerInfo.money + "!");
   } 
   else {
-    alert(playerInfo.name + " did not beat the high score of " + highScore + ". Maybe next time!");
+    alert(playerInfo.name + " thou did not beat the high score of " + highScore + ". Maybe next time!");
   }
 
   // ask player if they'd like to play again
-  var playAgainConfirm = window.confirm("Would you like to play again?");
+  var playAgainConfirm = window.confirm("Wouldest thou like to play again?");
 
   if (playAgainConfirm) {
     startGame();
@@ -248,7 +248,7 @@ var endGame = function() {
 var shop = function() {
   // ask player what they'd like to do
   var shopOptionPrompt = window.prompt(
-    "Would you like to REFILL your health, UPGRADE your attack, or LEAVE the store? Please enter one 1 for REFILL, 2 for UPGRADE, or 3 for LEAVE."
+    "Would you like to REFILL thine health, UPGRADE thine attack, or LEAVE yon store? Please enter one 1 for REFILL, 2 for UPGRADE, or 3 for LEAVE."
   );
 
   // use switch case to carry out action
